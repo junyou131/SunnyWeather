@@ -1,6 +1,7 @@
 package com.qiufeng.sunnyweather.logic
 
 import androidx.lifecycle.liveData
+import com.qiufeng.sunnyweather.logic.dao.PlaceDao
 import com.qiufeng.sunnyweather.logic.model.Place
 import com.qiufeng.sunnyweather.logic.model.Weather
 import com.qiufeng.sunnyweather.logic.network.SunnyWeatherNetwork
@@ -25,6 +26,10 @@ object Repository {
             }
             emit(result)
         }
+
+    fun savePlace(place: Place) = PlaceDao.savePlace(place)
+    fun getSavePlace() = PlaceDao.getSavePlace()
+    fun isPlaceSaved() = PlaceDao.isPlaceSaved()
 
     fun searchPlace(query: String) = fire {
         val placeResponse = SunnyWeatherNetwork.searchPlaces(query)

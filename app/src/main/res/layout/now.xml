@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="530dp"
+    android:id="@+id/nowLayout"
     tools:context=".ui.weather.WeatherActivity">
 
     <FrameLayout
-        android:id="@+id/nowLayout"
+        android:id="@+id/titleLayout"
         android:layout_width="match_parent"
-        android:layout_height="70dp">
+        android:layout_height="70dp"
+        android:fitsSystemWindows="true">
 
         <TextView
             android:id="@+id/placeName"
